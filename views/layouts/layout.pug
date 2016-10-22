@@ -2,7 +2,22 @@ doctype html
 html(lang="en")
 	head
 		title= "MeadowLark Travel"
+		if showTests
+			link(rel="stylesheet" href="/vendor/mocha.css")
+		script(src="//code.jquery.com/jquery-2.0.2.min.js")
 	body
 		header
 			img(src="/img/meadowlark.jpg", alt="Headowlark Travel")
 		block content
+	if showTests
+		div#mocha
+			script(src="/vendor/mocha.js")
+			script(src="/vendor/chai.js")
+			script.
+				mocha.ui('tdd');
+				let assert = chai.assert;
+			script(src="/qa/tests-global/js")
+			if pageTestScript
+				script(src=pageTestScript)
+			script.
+				mocha.run();
