@@ -3,7 +3,7 @@
 const express = require('express');
 const path = require('path');
 
-const fortunes = require('./fortune');
+const fortunes = require('./lib/fortune');
 
 const app = express();
 
