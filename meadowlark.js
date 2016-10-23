@@ -7,7 +7,16 @@ const fortunes = require('./lib/fortune');
 
 const app = express();
 
-app.set('view engine', 'pug');
+// Set up handlebars view engine
+
+const handlebars = require('express3-handlebars')
+	.create({
+		defaultLayout: 'main'
+	});
+
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+
 app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(path.join(__dirname, 'public')));
