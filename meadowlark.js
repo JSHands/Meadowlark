@@ -35,7 +35,18 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-	res.render('about', {fortune: fortunes.getRandomFortune()});
+	res.render('about', {
+		fortune: fortunes.getRandomFortune(),
+		pageTestScript: '/qa/tests-about.js'
+	});
+});
+
+app.get('/tours/hood-river', (req, res) => {
+	res.render('tours/hood-river');
+});
+
+app.get('/tours/request-group-rate', (req, res) => {
+	res.render('tours/request-group-rate');
 });
 
 // Custom 404 page
