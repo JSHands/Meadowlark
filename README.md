@@ -9,5 +9,5 @@ I recommend using [nodemon](https://github.com/remy/nodemon) to run your node ap
 
 `yarn add global nodemon`
 
-This project is using Pug (formerly knows as the Awesome Ninja Rabbit "Jade" as the templating engine).
+This project is Handlesbars as templating engine.
 
