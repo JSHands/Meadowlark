@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path');
 
 const fortunes = require('./lib/fortune');
+const tours = require('./lib/tours');
 
 const app = express();
 
@@ -47,6 +48,42 @@ app.get('/tours/hood-river', (req, res) => {
 
 app.get('/tours/request-group-rate', (req, res) => {
 	res.render('tours/request-group-rate');
+});
+
+// API
+
+app.get('/api/tours', (req, res) => {
+	res.json(tours.getTours());
+});
+
+app.put('/api/tour/:id', (req, res) => {
+	
+	if (tours.updateTour(req.params.id, req.query)) {
+		
+		res.json({
+			success: true,
+		});
+		
+	} else {
+		res.json({
+			error: 'No such tour exists.',
+		});
+	}
+});
+
+app.delete('/api/tour/:id', (req, res) => {
+	
+	if (tours.deleteTour(req.params.id)) {
+		
+		res.json({
+			success: true
+		})
+	} else {
+		res.json({
+			error: 'No such tour exists.',
+		});
+	}
+	
 });
 
 // Custom 404 page

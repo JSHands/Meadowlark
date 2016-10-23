@@ -10,13 +10,9 @@
     "gulp": "^3.9.1",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-mocha": "^3.0.1",
+    "immutable": "^3.8.1",
     "mocha-phantomjs": "^4.1.0",
     "pug": "^2.0.0-beta6"
   },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "grunt": "^1.0.1",
-    "grunt-cafe-mocha": "^0.1.13",
-    "mocha": "^3.1.2"
-  }
+  "devDependencies": {}
 }
