@@ -9,13 +9,16 @@ const app = express();
 
 // Set up handlebars view engine
 
-const handlebars = require('express3-handlebars')
-	.create({
-		defaultLayout: 'main'
-	});
+const hbs = require('express-handlebars')
+	.create(
+		{
+			extname: '.hbs',
+			defaultLayout: 'main'
+		}
+	);
 
-app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars');
+app.engine('.hbs', hbs.engine);
+app.set('view engine', '.hbs');
 
 app.set('port', process.env.PORT || 3000);
 
